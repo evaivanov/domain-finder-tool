@@ -1,6 +1,4 @@
-flask
-flask-cors
+streamlit
+openai>=0.27.0
 pandas
-openai
-xlrd
 openpyxl
