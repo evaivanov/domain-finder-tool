@@ -9,7 +9,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or st.secrets["OPENAI_API_KEY"]
 # Load OpenAI API key
 # with open("data/secret/openai_key.json") as f:
 #     OPENAI_API_KEY = json.load(f)["API_KEY"]
-# client = OpenAI(api_key=OPENAI_API_KEY)
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Load internal prompt
 with open("data/prompts/WEBSITE_FINDER_PROMPT.txt", "r", encoding="utf-8") as f:
