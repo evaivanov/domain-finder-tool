@@ -6,7 +6,6 @@ import os
 
 st.title("Company Domain Finder")
 
-# Your endpoint URL (set in .streamlit/secrets.toml or env var)
 ENDPOINT_URL = os.getenv("ENDPOINT_URL") or st.secrets["ENDPOINT_URL"]
 AUTH_TOKEN   = st.secrets["AUTH_TOKEN"]
 
@@ -46,6 +45,11 @@ def find_domains(names: list[str], batch_size: int = 25) -> dict[str,str]:
             results[obj["name"]] = obj["domain"]
     return results
 
+st.set_page_config(
+    page_title="Company Domain Finder", 
+    page_icon=":rocket:",               
+    # layout="wide"                       
+)
 
 uploaded_file = st.file_uploader("Upload CSV/Excel", type=["csv","xlsx"])
 if uploaded_file and st.button("Find Domains"):
